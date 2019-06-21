@@ -23,7 +23,7 @@ model.add(MaxPooling2D(pool_size=(2,2)))
 model.add(Conv2D(32, (3, 3)))
 model.add(Activation("relu"))
 model.add(MaxPooling2D  (pool_size=(2,2)))
-model.add(Flatten()) #Conv Layer是2D， DenseLayer是1D的 所以需要将ConvLayer压平
+model.add(Flatten()) #
 model.add(Dense(32))
 model.add(Activation("relu"))
 model.add(Dense(1))
@@ -31,7 +31,7 @@ model.add(Activation("sigmoid"))
 
 model.compile(loss="binary_crossentropy",
              optimizer="adam",
-             metrics=["accuracy"]) # 可以使用categorical_crossentropy作为损失函数
+             metrics=["accuracy"]) 
 model.fit(X, y, batch_size =32, epochs=10, validation_split=0.1)
 model.save('CNN.model')
 
